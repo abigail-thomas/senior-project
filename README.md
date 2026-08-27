@@ -9,37 +9,20 @@ A personalized cost-of-living and planning platform that helps users determine w
 5. Unique affordability score per city
 
 ## Tech Stack
-`
-┌─────────────────────┐
-                 │      Frontend       │
-                 │                     │
-                 │ React / Vue / HTMX  │
-                 └──────────┬──────────┘
-                            │
-                         REST API
-                            │
-                 ┌──────────▼──────────┐
-                 │       Django        │
-                 │                     │
-                 │ Authentication      │
-                 │ Budget Engine       │
-                 │ Recommendation      │
-                 │ Goal Engine         │
-                 │ Location API        │
-                 └──────────┬──────────┘
-                            │
-                 ┌──────────▼──────────┐
-                 │       SQLite        │
-                 │                     │
-                 │ Users               │
-                 │ Budgets             │
-                 │ Expenses            │
-                 │ Goals               │
-                 │ Locations           │
-                 │ Cost Data           │
-                 │ Historical Data     │
-                 └─────────────────────┘
-`
+**Frontend**
+React or Vue
+
+**Backend**
+Django
+- Authentication
+- Logic
+
+**Database**
+SQLite
+- Users
+- Budgets
+- Expenses
+- Goals
 
 ## Post-MVP Ideas
 1. "Vacation/Travel" mode for trip planning
