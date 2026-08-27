@@ -9,15 +9,15 @@ A personalized cost-of-living and planning platform that helps users determine w
 5. Unique affordability score per city
 
 ## Tech Stack
-**Frontend**
+**Frontend**<br/>
 React or Vue
 
-**Backend**
+**Backend**<br/>
 Django
 - Authentication
 - Logic
 
-**Database**
+**Database**<br/>
 SQLite
 - Users
 - Budgets
