@@ -9,20 +9,23 @@ A personalized cost-of-living and planning platform that helps users determine w
 5. Unique affordability score per city
 
 ## Tech Stack
-**Frontend**<br/>
-React or Vue
+### Frontend - React or Vue
+- 
 
-**Backend**<br/>
-Django
+### Backend - Django
 - Authentication
 - Logic
 
-**Database**<br/>
-SQLite
+### Database - SQLite
 - Users
 - Budgets
 - Expenses
 - Goals
+
+### APIs
+- MapLibre GL JS
+- Cost of Living
+    - [@zackharley][cost-of-living-api](https://github.com/zackharley/cost-of-living-api)
 
 ## Post-MVP Ideas
 1. "Vacation/Travel" mode for trip planning
