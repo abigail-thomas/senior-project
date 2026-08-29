@@ -55,7 +55,7 @@ function Home() {
                     </select>
                     <button
                         type="submit"
-                        className="border-solid p-2 rounded bg-blue-400 text-white"
+                        className="border-solid p-2 rounded bg-blue-400 text-white cursor-pointer"
                     >Submit</button>
 
                 </form>

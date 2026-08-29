@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e2^h9ru7d4(@_*-_a2*jt4c#_=x7jmpn_zm1zx3ve1sa85d$#)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -128,4 +128,4 @@ MAILERS = {
     },
 }
 
-CORS_ALLOWED__ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173",]
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173",]
