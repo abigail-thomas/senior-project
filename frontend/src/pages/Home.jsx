@@ -9,6 +9,7 @@ function Home() {
 
     let [city, setCity] = useState("");
     let [currency, setCurrency] = useState("USD");
+    let [results, setResults] = useState(null);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -18,6 +19,8 @@ function Home() {
             `http://127.0.0.1:8000/api/cost-of-living/?city=${city}&currency=${currency}`
         );
         const data = await res.json();
+
+        setResults(data);
 
         console.log("city: ", city);
         console.log("currency: ", currency);
@@ -60,6 +63,12 @@ function Home() {
 
                 </form>
             </div>
+
+            {results && (
+                <pre>
+                {JSON.stringify(results, null, 2)}
+                </pre>
+            )}
 
         </div>
     )
