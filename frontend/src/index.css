@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+@import "tailwindcss";
 
 @theme {
     --color-bg: #FAF8F5;
@@ -14,3 +14,4 @@
 input:focus, select:focus{
     outline: none;
 }
+

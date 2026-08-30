@@ -10,6 +10,7 @@ function Home() {
     let [city, setCity] = useState("");
     let [currency, setCurrency] = useState("USD");
     let [results, setResults] = useState(null);
+    let [hasSearched, setHasSearched] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -21,6 +22,8 @@ function Home() {
         const data = await res.json();
 
         setResults(data);
+
+        setHasSearched(true);
 
         console.log("city: ", city);
         console.log("currency: ", currency);
@@ -59,10 +62,11 @@ function Home() {
                     </select>
                     <button
                         type="submit"
-                        className="row-2 col-span-2 border-solid p-2 rounded-xl bg-primary text-white cursor-pointer"
+                        className="row-2 col-span-2 border-solid p-2 rounded-xl bg-primary text-white cursor-pointer hover:bg-red-500"
                     >Analyze Costs</button>
 
                 </form>
+
             </div>
 
             {results && (
