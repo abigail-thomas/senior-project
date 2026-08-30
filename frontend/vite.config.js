@@ -9,4 +9,11 @@ export default defineConfig({
       react(),
     tailwindcss(),
   ],
+    theme: {
+        extend: {
+            fontFamily: {
+                gabarito: ["Gabarito", "sans-serif"]
+            }
+        }
+    }
 })

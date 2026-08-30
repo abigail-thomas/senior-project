@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+
+@theme {
+    --color-bg: #FAF8F5;
+    --color-text: #2B2523;
+    --color-textsecondary: #7E7672;
+    --color-primary: #425A55;
+    --color-secondary: #7E7672;
+    --color-accent: #E3EFEA;
+    --font-gabarito: "Gabarito", sans-serif;
+}
+
+input:focus, select:focus{
+    outline: none;
+}

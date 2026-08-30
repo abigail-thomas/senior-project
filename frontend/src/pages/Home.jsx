@@ -29,21 +29,22 @@ function Home() {
     }
 
     return (
-        <div>
-            <h1 className="text-center p-5 text-2xl">Cost of Living YAY</h1>
+        <div className="bg-bg font-gabarito">
+            <h1 className=" text-text font-semibold text-center p-5 text-4xl">Cost of Living</h1>
 
             {/* form for cities */}
-            <div className="flex mx-auto p-4">
-                <form className="mx-auto flex items-center gap-4" onSubmit={handleSubmit} action="">
+            <div className="mx-auto p-4">
+                <form className="grid grid-row grid-cols-4 xl:w-[50%] mx-auto items-center gap-4" onSubmit={handleSubmit} action="">
                     <input
                        type="text"
-                       placeholder="Enter city"
+                       placeholder="Enter city (e.g. 'Tampa', 'London', 'Kyoto')"
                        value={city}
                        onChange={(e) => setCity(e.target.value)}
                        required
-                       className="w-full p-2 rounded outline-solid outline-gray-200  outline-1 bg-gray-100"
+                       className="row-1 col-span-4 w-full p-4 rounded-xl bg-white"
                     />
-                    <select className="p-2 rounded outline-solid outline-gray-200  outline-1 bg-gray-100"
+                    {/* style this later w a plugin or somethign i think */}
+                    <select className="row-2 col-span-2 p-2 rounded-xl bg-white"
                             name="currency"
                             id="currency"
                             value={currency}
@@ -58,8 +59,8 @@ function Home() {
                     </select>
                     <button
                         type="submit"
-                        className="border-solid p-2 rounded bg-blue-400 text-white cursor-pointer"
-                    >Submit</button>
+                        className="row-2 col-span-2 border-solid p-2 rounded-xl bg-primary text-white cursor-pointer"
+                    >Analyze Costs</button>
 
                 </form>
             </div>
