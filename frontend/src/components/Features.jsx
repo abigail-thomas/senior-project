@@ -6,7 +6,7 @@ function Features() {
 
                 <div className="card">
                     <div>
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                         query_stats</span>
                         <h4 className=" font-semibold text-left">Feature 1</h4>
                     </div>
