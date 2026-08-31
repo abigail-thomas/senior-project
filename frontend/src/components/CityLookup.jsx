@@ -33,7 +33,7 @@ function CityLookup() {
 
     return (
         <div className="bg-bg font-gabarito">
-            <h1 className=" text-text font-semibold text-center p-5 text-4xl">Cost of Living</h1>
+            <h1 className="  text-center p-5 text-4xl">Cost of Living</h1>
 
             {/* form for cities */}
             <div className="mx-auto p-4">
@@ -64,7 +64,7 @@ function CityLookup() {
                     </select>
                     <button
                         type="submit"
-                        className="row-2 col-span-2 border-solid p-2 rounded-xl bg-primary text-white cursor-pointer hover:bg-accent2 transition ease-in-out duration-200"
+                        className="row-2 col-span-2 btn"
                     >Analyze Costs</button>
 
                 </form>

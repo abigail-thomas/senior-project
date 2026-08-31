@@ -4,7 +4,6 @@
 @theme {
     --color-bg: #FAF8F5;
     --color-text: #2B2523;
-    --color-textsecondary: #7E7672;
     --color-primary: #425A55;
     --color-secondary: #7E7672;
     --color-accent: #E3EFEA;
@@ -14,5 +13,26 @@
 
 input:focus, select:focus{
     outline: none;
+}
+
+/* elements */
+h1 {
+    @apply text-text font-semibold
+}
+p {
+    @apply text-secondary
+}
+
+/* classes */
+.btn {
+    @apply border-solid p-2 rounded-xl bg-primary text-white cursor-pointer hover:bg-accent2 transition ease-in-out duration-200
+}
+
+.card {
+    @apply bg-white rounded-xl grid grid-flow-row p-4;
+}
+
+.card .material-symbols-outlined{
+    @apply text-primary
 }
 
