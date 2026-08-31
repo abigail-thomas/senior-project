@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
-@import "tailwindcss";
+@import "tailwindcss"; @custom-variant hover (&:hover);
 
 @theme {
     --color-bg: #FAF8F5;
@@ -8,6 +8,7 @@
     --color-primary: #425A55;
     --color-secondary: #7E7672;
     --color-accent: #E3EFEA;
+    --color-accent2: #5E7D77;
     --font-gabarito: "Gabarito", sans-serif;
 }
 
