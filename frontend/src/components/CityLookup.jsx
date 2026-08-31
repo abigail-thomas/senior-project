@@ -47,7 +47,7 @@ function CityLookup() {
                         className="row-1 col-span-4 w-full p-4 rounded-xl bg-white"
                     />
                     {/* style this later w a plugin or somethign i think */}
-                    <select className="row-2 col-span-2 p-2 rounded-xl bg-white"
+                    <select className="row-2 text-text col-span-2 p-2 rounded-xl bg-white"
                             name="currency"
                             id="currency"
                             value={currency}
