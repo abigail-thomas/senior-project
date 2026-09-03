@@ -5,6 +5,18 @@ function parseCost(value) {
     return Number(String(value).replace(/,/g, ""));
 }
 
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Whole-word/phrase matching instead of raw .includes(), so a keyword like
+// "rice" can't accidentally match inside an unrelated word like "price".
+function hasKeyword(itemName, keywords) {
+    return keywords.some((kw) =>
+        new RegExp(`\\b${escapeRegex(kw)}\\b`, "i").test(itemName)
+    );
+}
+
 function organizeCostData(data) {
     const organizedData = {
         city: data.city,
@@ -34,37 +46,20 @@ function organizeCostData(data) {
         };
 
         if (
-            itemName.includes("restaurant") ||
-            itemName.includes("mcdonald") ||
-            itemName.includes("cappuccino") ||
-            itemName.includes("soft drink") ||
-            itemName.includes("bottled water") ||
-            itemName.includes("milk") ||
-            itemName.includes("bread") ||
-            itemName.includes("rice") ||
-            itemName.includes("eggs") ||
-            itemName.includes("cheese") ||
-            itemName.includes("chicken") ||
-            itemName.includes("beef") ||
-            itemName.includes("apples") ||
-            itemName.includes("bananas") ||
-            itemName.includes("oranges") ||
-            itemName.includes("tomatoes") ||
-            itemName.includes("potatoes") ||
-            itemName.includes("onions") ||
-            itemName.includes("lettuce") ||
-            // alcohol counts as food/drink per project decision; tobacco does not
-            itemName.includes("beer") ||
-            itemName.includes("wine")
+            hasKeyword(itemName, [
+                "restaurant", "mcdonald", "cappuccino", "soft drink",
+                "bottled water", "milk", "bread", "rice", "eggs", "cheese",
+                "chicken", "beef", "apples", "bananas", "oranges", "tomatoes",
+                "potatoes", "onions", "lettuce",
+                // alcohol counts as food/drink per project decision; tobacco does not
+                "beer", "wine"
+            ])
         ) {
             organizedItem.category = "food";
             organizedData.categories.food.push(organizedItem);
         }
         else if (
-            itemName.includes("transport") ||
-            itemName.includes("taxi") ||
-            itemName.includes("gasoline") ||
-            itemName.includes("car")
+            hasKeyword(itemName, ["transport", "taxi", "gasoline", "car"])
         ) {
             organizedItem.category = "transportation";
             organizedData.categories.transportation.push(organizedItem);
@@ -72,48 +67,37 @@ function organizeCostData(data) {
         else if (
             // utilities is checked before the broader "apartment" housing match below,
             // so an item like "Basic Utilities for 915 Square Feet Apartment" lands here, not in housing
-            itemName.includes("utilities") ||
-            itemName.includes("mobile phone") ||
-            itemName.includes("internet") ||
-            itemName.includes("broadband")
+            hasKeyword(itemName, ["utilities", "mobile phone", "internet", "broadband"])
         ) {
             organizedItem.category = "utilities";
             organizedData.categories.utilities.push(organizedItem);
         }
         else if (
-            itemName.includes("apartment") ||
-            itemName.includes("mortgage")
+            hasKeyword(itemName, ["apartment", "mortgage"])
         ) {
             organizedItem.category = "housing";
             organizedData.categories.housing.push(organizedItem);
         }
         else if (
-            itemName.includes("fitness") ||
-            itemName.includes("tennis") ||
-            itemName.includes("cinema")
+            hasKeyword(itemName, ["fitness", "tennis", "cinema"])
         ) {
             organizedItem.category = "entertainment";
             organizedData.categories.entertainment.push(organizedItem);
         }
         else if (
-            itemName.includes("preschool") ||
-            itemName.includes("primary school") ||
-            itemName.includes("school")
+            hasKeyword(itemName, ["preschool", "primary school", "school"])
         ) {
             organizedItem.category = "education";
             organizedData.categories.education.push(organizedItem);
         }
         else if (
-            itemName.includes("jeans") ||
-            itemName.includes("dress") ||
-            itemName.includes("running shoes") ||
-            itemName.includes("business shoes")
+            hasKeyword(itemName, ["jeans", "dress", "running shoes", "business shoes"])
         ) {
             organizedItem.category = "clothing";
             organizedData.categories.clothing.push(organizedItem);
         }
         else if (
-            itemName.includes("salary")
+            hasKeyword(itemName, ["salary"])
         ) {
             organizedItem.category = "financial";
             organizedData.categories.financial.push(organizedItem);
